@@ -1,6 +1,7 @@
 @import "vars";
 @import "fonts";
 @import "reset";
+@import "libs";
 @import "global";
 
 .header {
@@ -16,17 +17,15 @@
   margin-right: 516px;
   border-radius: 5px;
   padding: 7px 2px 2px;
-  transition: background-color 0.5s,
-              box-shadow 0.5s,
-              opacity 0.5s;
-  &:focus{
+  transition: background-color 0.5s, box-shadow 0.5s, opacity 0.5s;
+  &:focus {
     background-color: rgba(255, 255, 255, 0.01);
     box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
   }
-  &:hover{
+  &:hover {
     opacity: 0.8;
   }
-  &:active{
+  &:active {
     opacity: 0.5;
   }
 }
@@ -44,9 +43,7 @@
     color: $dark;
     font-size: 18px;
     border-radius: 5px;
-    transition: color 0.5s,
-                text-shadow 0.5s,
-                border-radius 0.5s;
+    transition: color 0.5s, text-shadow 0.5s, border-radius 0.5s;
     &:active {
       text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
     }
@@ -58,7 +55,7 @@
       box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
     }
   }
-  &__link--active{
+  &__link--active {
     color: $orange;
   }
 }
@@ -73,9 +70,7 @@
     height: 44px;
     border-radius: 5px;
     position: relative;
-    transition: background-color 0.5s,
-                box-shadow 0.5s,
-                border-radius 0.5s;
+    transition: background-color 0.5s, box-shadow 0.5s, border-radius 0.5s;
   }
   &__item:not(:last-child) {
     margin-right: 10px;
@@ -87,9 +82,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.5s,
-                box-shadow 0.5s,
-                border-radius 0.5s;
+    transition: background-color 0.5s, box-shadow 0.5s, border-radius 0.5s;
   }
 
   &__link:focus {
@@ -98,29 +91,29 @@
   }
   &__link:hover span {
     background-color: #fff;
-    color: #FF7A50;
+    color: #ff7a50;
   }
   &__link:active span {
     color: #fff;
-    background-color: #FF7A50;
+    background-color: #ff7a50;
   }
   &__link:hover {
-    background-color: #FF7A50;
+    background-color: #ff7a50;
     path {
-          stroke: #fff;
-        }
-        ellipse{
-          stroke: #fff
-        }
+      stroke: #fff;
+    }
+    ellipse {
+      stroke: #fff;
+    }
   }
   &__link:active {
-    background-color: #FFF2ED;
+    background-color: #fff2ed;
     path {
-          stroke: #000;
-        }
-        ellipse{
-          stroke: #000;
-        }
+      stroke: #000;
+    }
+    ellipse {
+      stroke: #000;
+    }
   }
   &__num {
     position: absolute;
@@ -148,7 +141,7 @@
   }
   &__items-list {
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
   }
   &__items {
     margin-right: 70px;
@@ -161,40 +154,38 @@
     line-height: 1.3;
     letter-spacing: 0.01em;
   }
-  &__form{
+  &__form {
     display: flex;
     flex-direction: column;
   }
-  &__subscribe{
+  &__subscribe {
     margin-right: 70px;
   }
   &__form-input {
     margin-bottom: 12px;
     max-width: 200px;
     height: 44px;
-    border: 1px solid #C2C2C2;
+    border: 1px solid #c2c2c2;
     border-radius: 5px;
-    transition: border-radius 0.5s,
-                box-shadow 0.5s,
-                background-color 0.5s,
-                opacity 0.5s;
+    transition: border-radius 0.5s, box-shadow 0.5s, background-color 0.5s,
+      opacity 0.5s;
   }
-  &__form-input::placeholder{
+  &__form-input::placeholder {
     padding: 13px 15px;
     display: block;
     font-size: 14px;
     line-height: 130%;
-    color: $gray
+    color: $gray;
   }
   &__form-input:hover::placeholder {
     color: $darkBlue;
     opacity: 0.9;
   }
   &__form-input:focus {
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     box-shadow: 0 0 0 2px $orange;
   }
-  &__form-btn{
+  &__form-btn {
     background-color: $orange;
     color: #fff;
     @extend %rubik-500;
@@ -205,23 +196,20 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    transition: background-color 0.5s,
-                box-shadow 0.5s,
-                color 0.5s,
-                border-radius 0.5s,
-                fill 0.5s;
+    transition: background-color 0.5s, box-shadow 0.5s, color 0.5s,
+      border-radius 0.5s, fill 0.5s;
   }
-  &__form-btn #telegram{
+  &__form-btn #telegram {
     transition: fill 0.5s;
   }
   &__form-btn:focus #telegram,
   &__form-btn:hover #telegram,
-  &__form-btn:active #telegram { 
+  &__form-btn:active #telegram {
     fill: $orange;
   }
   &__form-btn:hover {
     color: $orange;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
   }
   &__form-btn:focus {
@@ -230,11 +218,11 @@
     box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
   }
   &__form-btn:active {
-    background-color: #FFF2ED;
+    background-color: #fff2ed;
   }
-  
-  & a{
-    display: block
+
+  & a {
+    display: block;
   }
 }
 
@@ -250,7 +238,7 @@
     padding-left: 34px;
   }
   &__item::before {
-    content: '';
+    content: "";
     top: 0;
     left: 7px;
     width: 15px;
@@ -259,50 +247,47 @@
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
-    
   }
   &__item-location::before {
-    background-image: url('../images/icons/location.svg');
+    background-image: url("../images/icons/location.svg");
   }
   &__item-phone::before {
     width: 19px;
     height: 19px;
-    background-image: url('../images/icons/calling.svg');
+    background-image: url("../images/icons/calling.svg");
   }
   &__item-email::before {
     width: 20px;
-    background-image: url('../images/icons/message.svg');
+    background-image: url("../images/icons/message.svg");
   }
   &__social-list {
-    display: flex;   
+    display: flex;
   }
-  &__social-item:not(:last-child){
+  &__social-item:not(:last-child) {
     margin-right: 13px;
   }
   &__social-link .social,
   &__social-link .social-radius,
   &__social-link .social-path {
     border-radius: 50%;
-    transition: fill 0.5s,
-                box-shadow 0.5s,
-                border-radius 0.5s;
+    transition: fill 0.5s, box-shadow 0.5s, border-radius 0.5s;
   }
   &__social-link:focus .social,
-  &__social-link:focus .social-radius{
-    fill: #FFF2ED;
+  &__social-link:focus .social-radius {
+    fill: #fff2ed;
     box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
   }
-  &__social-link:hover .social{
-    fill: #FF7A50;
+  &__social-link:hover .social {
+    fill: #ff7a50;
   }
-  &__social-link:hover .social-path{
+  &__social-link:hover .social-path {
     fill: #fff;
   }
-  &__social-link:active .social-path{
-    fill: #FF7A50;
+  &__social-link:active .social-path {
+    fill: #ff7a50;
   }
-  &__social-link:active .social{
-    fill: #FFF2ED;
+  &__social-link:active .social {
+    fill: #fff2ed;
     box-shadow: 0 0 0 0 transparent;
   }
 }
@@ -314,6 +299,143 @@
   line-height: 1;
 }
 
-
+.review-slider {
+  padding: 120px 90px;
+  &__inner {
+    text-align: center;
+  }
+  &__item {
+    margin-bottom: 48px;
+  }
+  &__title {
+    @extend %rubik-500;
+    font-size: 36px;
+    line-height: 1.3;
+    margin-bottom: 45px;
+  }
+  &__foto {
+    border-radius: 50%;
+    margin-right: 40px;
+  }
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__review {
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 40px;
+  }
+  &__name {
+    @extend %rubik-500;
+    font-size: 20px;
+    line-height: 1.3;
+    color: $orange;
+    display: block;
+    margin-bottom: 15px;
+  }
+  &__desc {
+    font-size: 14px;
+    line-height: 1.3;
+    color: $dark;
+  }
+  &__text {
+    position: relative;
+    @extend %rubik-italic-400;
+    font-size: 20px;
+    line-height: 1.5;
+    color: $dark;
+    text-align: left;
+    margin-bottom: 30px;
+    &::before {
+      content: "";
+      top: 0;
+      left: -40px;
+      width: 24px;
+      height: 20px;
+      position: absolute;
+      background-image: url("../images/icons/leftquote.svg");
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    &::after {
+      content: "";
+      bottom: 0;
+      right: -40px;
+      width: 24px;
+      height: 20px;
+      position: absolute;
+      background-image: url("../images/icons/rightquote.svg");
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 445px;
+    bottom: -9px;
+    li {
+      padding: 0 15px 0 0;
+      button {
+        padding: 0;
+        font-size: 0;
+        border-radius: 50%;
+        background-color: $gray;
+        width: 15px;
+        height: 15px;
+        transition: background-color 0.5s, box-shadow 0.5s;
+        &:focus {
+          background-color: $gray;
+          box-shadow: 0 0 0 2px $orange;
+        }
+        &:hover {
+          background-color: #fff2ed;
+          box-shadow: 0 0 0 2px rgba(255, 122, 80, 0.7);
+        }
+        &:active {
+          background-color: #ffae94;
+        }
+      }
+      &.slick-active {
+        button {
+          background-color: $orange;
+        }
+      }
+    }
+  }
+  .slick-next,
+  .slick-prev {
+    position: absolute;
+    top: 100%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    &:focus {
+      background-color: rgba(255, 255, 255, 0.01);
+      box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+    }
+    &:hover {
+      background-color: #fff2ed;
+      // path {
+      //   fill: #ffae94;
+      // }
+      // ellipse {
+      //   fill: #ffae94;
+      // }
+    }
+  }
+  .slick-prev {
+    left: 390px;
+  }
+  .slick-next {
+    left: 565px;
+  }
+}
 
 @import "media";
