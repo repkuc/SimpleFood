@@ -244,9 +244,7 @@
     width: 15px;
     height: 18px;
     position: absolute;
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    @extend %bg_images;
   }
   &__item-location::before {
     background-image: url("../images/icons/location.svg");
@@ -300,7 +298,7 @@
 }
 
 .review-slider {
-  padding: 120px 90px;
+  padding: 0 90px;
   &__inner {
     text-align: center;
   }
@@ -358,9 +356,6 @@
       height: 20px;
       position: absolute;
       background-image: url("../images/icons/leftquote.svg");
-      background-position: center center;
-      background-size: cover;
-      background-repeat: no-repeat;
     }
     &::after {
       content: "";
@@ -370,9 +365,6 @@
       height: 20px;
       position: absolute;
       background-image: url("../images/icons/rightquote.svg");
-      background-position: center center;
-      background-size: cover;
-      background-repeat: no-repeat;
     }
   }
   .slick-dots {
@@ -422,12 +414,6 @@
     }
     &:hover {
       background-color: #fff2ed;
-      // path {
-      //   fill: #ffae94;
-      // }
-      // ellipse {
-      //   fill: #ffae94;
-      // }
     }
   }
   .slick-prev {
@@ -435,6 +421,239 @@
   }
   .slick-next {
     left: 565px;
+  }
+}
+
+.home {
+  margin-bottom: 120px;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__content {
+    max-width: 450px;
+  }
+  &__title {
+    @extend %rubik-500;
+    font-size: 66px;
+    line-height: 1.3;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    &--span {
+      display: block;
+      color: $orange;
+    }
+  }
+  &__text {
+    font-size: 20px;
+    line-height: 1.5;
+    color: $dark;
+    margin-bottom: 20px;
+  }
+  &__link {
+    margin-right: 34px;
+    font-size: 18px;
+    line-height: 1.3;
+    letter-spacing: 0.03em;
+    padding: 12px 32px;
+    background-color: $orange;
+    border-radius: 6px;
+    color: #ffffff;
+    transition: color 0.5s, background-color 0.5s, box-shadow 0.5s;
+    &:hover {
+      color: $orange;
+      background-color: #ffffff;
+      box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+    }
+    &:focus {
+      color: $orange;
+      background-color: rgba(255, 122, 80, 0.1);
+      box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+    }
+    &:active {
+      background-color: #fff2ed;
+    }
+  }
+  &__more {
+    line-height: 1.5;
+    text-decoration: underline;
+    border-radius: 5px;
+    transition: color 0.5s, box-shadow 0.5s, background-color 0.5s,
+      border-radius 0.5s, text-decoration-color 0.5s, text-shadow 0.5s;
+    &:focus {
+      background-color: rgba(255, 255, 255, 0.01);
+      box-shadow: 0 0 0 2px rgba(255, 122, 80, 0.7);
+    }
+    &:hover {
+      color: $orange;
+      text-decoration-color: transparent;
+    }
+    &:active {
+      color: $darkBlue;
+      text-shadow: 2px 2px 5px rgba(54, 56, 83, 0.5);
+    }
+  }
+  &__picture {
+    max-width: 560px;
+    @extend %bg_images;
+  }
+}
+
+.categories {
+  &__inner {
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    @extend %rubik-500;
+    font-size: 36px;
+    line-height: 1.3;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  &__nav {
+    margin-bottom: 45px;
+  }
+  &__list {
+    display: flex;
+    &-item {
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+  }
+  &__link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 32px;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 1px $silver-200;
+    border-radius: 5px;
+    line-height: 1.3;
+    height: 70px;
+    transition: background-color 0.5s, box-shadow 0.5s, color 0.5s;
+    path {
+      transition: fill 0.5s;
+    }
+    &--active {
+      background-color: $orange;
+      color: #ffffff;
+      &:focus {
+        color: $darkBlue;
+        path {
+          fill: $darkBlue;
+        }
+        ellipse {
+          fill: $darkBlue;
+        }
+      }
+    }
+    &-icon {
+      transform: translateX(-10px);
+    }
+    &:focus {
+      background-color: #ffffff;
+      box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+    }
+    &:hover {
+      background-color: rgba(255, 122, 80, 0.1);
+      box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+      color: $orange;
+      path {
+        fill: $orange;
+      }
+      ellipse {
+        fill: $orange;
+      }
+    }
+    &:active {
+      background-color: #ffffff;
+      box-shadow: inset 0 -5px 12px rgba(255, 104, 56, 0.2);
+    }
+  }
+  &__content {
+    text-align: center;
+  }
+  &__items {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(5, 1fr);
+    margin-bottom: 60px;
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 1px $silver-200;
+    border-radius: 5px;
+    padding: 20px 35px;
+    transition: background-color 0.5s, box-shadow 0.5s;
+    &:hover {
+      background-color: #ffffff;
+      box-shadow: 0 0 0 1px #ff6838;
+    }
+    // &-content:not(:last-child) {
+    //   margin-bottom: 10px;
+    // }
+    &-img {
+      @extend %bg_images;
+    }
+    &-desc {
+      font-size: 15px;
+      line-height: 18px;
+      color: $dark;
+    }
+    &-price {
+      @extend %rubik-500;
+      font-size: 15px;
+    }
+    &-btn {
+      padding: 7px 16px;
+      border-radius: 6px;
+      background-color: $orange;
+      color: #ffffff;
+      font-size: 14px;
+      line-height: 1.3;
+      transition: color 0.5s, background-color 0.5s, box-shadow 0.5s;
+      &:hover {
+        color: $orange;
+        background-color: #ffffff;
+        box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+      }
+      &:focus {
+        color: $orange;
+        background-color: rgba(255, 122, 80, 0.1);
+        box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+      }
+      &:active {
+        background-color: #fff2ed;
+      }
+    }
+  }
+  &__more {
+    text-align: center;
+    line-height: 1.5;
+    border-radius: 5px;
+    text-decoration: underline;
+    transition: color 0.5s, box-shadow 0.5s, background-color 0.5s,
+      border-radius 0.5s, text-decoration-color 0.5s, text-shadow 0.5s;
+    &:focus {
+      background-color: rgba(255, 255, 255, 0.01);
+      box-shadow: 0 0 0 2px rgba(255, 122, 80, 0.7);
+    }
+    &:hover {
+      color: $orange;
+      text-decoration-color: transparent;
+    }
+    &:active {
+      color: $darkBlue;
+      text-shadow: 2px 2px 5px rgba(54, 56, 83, 0.5);
+    }
   }
 }
 
